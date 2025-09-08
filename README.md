@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EcoFiz · Poder de limpieza en cada burbuja</title>
+  <meta name="description" content="EcoFiz ofrece pastillas de limpieza ecológicas: versión normal para el uso diario y versión premium con aroma duradero. Empaques sustentables, merchandising y uniformes de marca." />
+  <style>
+    :root{
+      --green:#6BAA75;
+      --cream:#F5F5DC;
+      --yellow:#FFD54F;
+      --ink:#213129;
+      --muted:#667a6f;
+      --line:#e6e6e6;
+      --radius:16px;
+      --shadow:0 12px 28px rgba(0,0,0,.08);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;font-family:Inter,sans-serif;color:var(--ink);background:#fff}
+    img{max-width:100%;display:block}
+    a{color:var(--green);text-decoration:none}
+    .container{max-width:1180px;margin:0 auto;padding:24px}
+    .grid{display:grid;gap:24px}
+    .two{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .three{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    .badge{display:inline-flex;align-items:center;gap:8px;background:var(--cream);border:1px solid #e9e2c9;color:#2d392f;border-radius:999px;padding:6px 12px;font-weight:600}
+    .btn{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#fff;border-radius:999px;padding:12px 18px;font-weight:700;box-shadow:var(--shadow)}
+    .btn.alt{background:#fff;color:var(--ink);border:1px solid var(--green)}
+    header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{width:56px;height:56px;object-fit:contain;background:#fff;}
+    nav a{padding:12px 10px;color:#2f3c33}
+    .menu-btn{display:none}
+    .mobile{display:none;border-top:1px solid var(--line)}
+    .mobile a{display:block;padding:12px 10px}
+    .show{display:block}
+    .hero{background:linear-gradient(180deg,var(--cream),#fff)}
+    .hero-wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center}
+    h1{font-size:clamp(28px,4vw,46px);line-height:1.08;margin:0 0 12px}
+    h2{font-size:clamp(24px,3.2vw,34px);margin:0 0 10px}
+    h3{font-size:20px;margin:0 0 6px}
+    p{line-height:1.64;margin:0 0 12px}
+    .pill{display:inline-block;background:var(--yellow);color:#3b3a12;padding:6px 12px;border-radius:999px;font-weight:800}
+    .kpis{display:grid;gap:16px;grid-template-columns:repeat(3,minmax(0,1fr))}
+    .kpi{background:#fff;border:1px solid var(--line);border-radius:12px;text-align:center;padding:16px}
+    .swatch{height:48px;border-radius:10px;border:1px solid var(--line)}
+    .foot{background:#0f1a14;color:#e8efe9;margin-top:28px}
+    .foot a{color:#cde6d2}
+    .foot img{width:42px;height:42px;object-fit:contain;}
+    .foot-brand{display:flex;gap:10px;align-items:center}
+    @media (max-width:980px){
+      .hero-wrap{grid-template-columns:1fr}
+      .two{grid-template-columns:1fr}
+      .three{grid-template-columns:repeat(2,minmax(0,1fr))}
+      nav{display:none}
+      .menu-btn{display:inline-flex}
+      .brand img{width:44px;height:44px;}
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <img src="sandbox:/mnt/data/A_logo_for_%22EcoFiz%22_is_displayed_on_a_transparent_.png" alt="Logo EcoFiz" />
+        <div>
+          <strong style="font-size:18px">EcoFiz</strong><br>
+          <small style="color:var(--muted)">Poder de limpieza en cada burbuja</small>
+        </div>
+      </div>
+      <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#productos">Productos</a>
+        <a href="#empaques">Empaques</a>
+        <a href="#merch">Merchandising</a>
+        <a href="#uniformes">Uniformes</a>
+        <a href="#publicidad">Publicidad</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <button class="menu-btn btn alt" id="menuBtn">Menú</button>
+    </div>
+    <div class="mobile container" id="mobileNav">
+      <a href="#inicio">Inicio</a>
+      <a href="#productos">Productos</a>
+      <a href="#empaques">Empaques</a>
+      <a href="#merch">Merchandising</a>
+      <a href="#uniformes">Uniformes</a>
+      <a href="#publicidad">Publicidad</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="inicio" class="hero">
+    <div class="container hero-wrap">
+      <div>
+        <span class="pill">Limpieza ecológica, simple y efectiva</span>
+        <h1>Pastillas multiusos que cuidan tu hogar y el planeta</h1>
+        <p>En EcoFiz reducimos plásticos y elevamos resultados. Disuelves, limpias y listo: menos residuos, mejores ingredientes y un aroma natural que sí se disfruta.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin:16px 0 20px">
+          <span class="badge">No tóxico</span>
+          <span class="badge">100% Natural</span>
+          <span class="badge">Sin plástico</span>
+        </div>
+        <a class="btn" href="#productos">Ver productos</a>
+        <a class="btn alt" href="https://wa.me/525533538981" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+      <div class="card" style="background:linear-gradient(160deg,#fcfbf4,#fff)">
+        <h3>Nuestra promesa</h3>
+        <p>Una limpieza consciente, sin sacrificio de eficacia. Formulaciones sencillas, ingredientes de calidad y empaques responsables.</p>
+        <div class="kpis" style="margin-top:12px">
+          <div class="kpi"><strong>–80%</strong><br><small>plástico vs. limpieza tradicional</small></div>
+          <div class="kpi"><strong>100%</strong><br><small>origen natural</small></div>
+          <div class="kpi"><strong>Multiusos</strong><br><small>cocina, baño y superficies</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Productos -->
+  <section id="productos" class="container">
+    <h2>Productos EcoFiz</h2>
+    <p>Dos versiones para necesidades distintas: la normal para el día a día, y la premium para una experiencia más profunda y aromática.</p>
+    <div class="grid two" style="margin-top:16px">
+      <article class="card">
+        <span class="badge">EcoFiz Clean Tabs</span>
+        <h3 style="margin-top:10px">Limpieza ecológica para todos los días</h3>
+        <p>Pastillas multiusos con ingredientes naturales, seguras para toda la familia y muy fáciles de usar.</p>
+        <div class="grid two" style="margin-top:12px">
+          <div class="card" style="background:var(--cream)">
+            <strong>Presentaciones</strong>
+            <p style="margin-top:6px">Bolsa kraft compostable con etiqueta frontal. Alternativa: frasco de vidrio transparente con tapa metálica.</p>
+          </div>
+          <div class="card">
+            <strong>Beneficios</strong>
+            <p style="margin-top:6px">No tóxico, 100% natural y sin plástico. Ideal para superficies de uso cotidiano.</p>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <span class="badge" style="background:#e9f4eb;border-color:#cfe7d6">EcoFiz Clean Tabs+</span>
+        <h3 style="margin-top:10px">Limpieza profunda, aroma premium</h3>
+        <p>Pastillas artesanales con arcilla blanca y vinagre en polvo para máxima desinfección, combinadas con aceites esenciales (lavanda, menta y limón) para un aroma duradero.</p>
+        <div class="grid two" style="margin-top:12px">
+          <div class="card" style="background:var(--cream)">
+            <strong>Presentaciones</strong>
+            <p style="margin-top:6px">Caja rígida tipo cosmético con divisor interno. Alternativa: frasco ámbar con tapa de madera grabada.</p>
+          </div>
+          <div class="card">
+            <strong>Beneficios</strong>
+            <p style="margin-top:6px">Acción antibacterial, aroma premium y selección de ingredientes “gourmet”.</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Empaques -->
+  <section id="empaques" class="container">
+    <h2>Diseño de Empaques</h2>
+    <div class="grid two">
+      <div class="card">
+        <h3>Clean Tabs (Normal)</h3>
+        <p>Fondo blanco, ilustraciones de bicarbonato, limón y hojas verdes. Logo arriba, eslogan debajo y lectura clara a la distancia. Mensaje visual: práctico, accesible y natural.</p>
+      </div>
+      <div class="card">
+        <h3>Clean Tabs+ (Premium)</h3>
+        <p>Fondo crema con ilustraciones más detalladas (lavanda, menta, limón). Logo en verde oscuro con sutiles toques dorados. Mensaje visual: sofisticado y sensorial.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Merchandising -->
+  <section id="merch" class="container">
+    <h2>Merchandising</h2>
+    <p>Elegimos piezas útiles y coherentes con la marca: stickers en papel reciclado, cuadernos con tapa kraft, llaveros de madera/bioplástico, plumas de bambú y sudadera ligera.</p>
+    <div class="grid three" style="margin-top:12px">
+      <div class="card"><strong>Stickers ecológicos</strong><p>Adhesivo compostable. Frases: “Limpieza sin plástico”, “Cada burbuja cuenta”.</p></div>
+      <div class="card"><strong>Cuadernos</strong><p>Portada en crema con logo verde; papel sin blanqueadores.</p></div>
+      <div class="card"><strong>Llaveros</strong><p>Minimalistas en verde hoja o crema, con isotipo.</p></div>
+      <div class="card"><strong>Plumas</strong><p>Cuerpo de bambú o cartón reciclado; tinta negra.</p></div>
+      <div class="card"><strong>Sudadera Sport‑Active</strong><p>Verde hoja/crema, logo al frente y eslogan discreto.</p></div>
+    </div>
+  </section>
+
+  <!-- Uniformes -->
+  <section id="uniformes" class="container">
+    <h2>Uniformes seleccionados</h2>
+    <div class="grid two">
+      <div class="card">
+        <h3>1) Polo corporativo</h3>
+        <p>Polo verde hoja con ribetes en amarillo limón; logo bordado al pecho. Pantalón beige y tenis blancos para un look fresco y profesional.</p>
+      </div>
+      <div class="card">
+        <h3>2) Conjunto formal ecológico</h3>
+        <p>Camisa blanco crema con botones verdes y logo en el bolsillo; pantalón verde olivo. Ideal para ferias y presentaciones.</p>
+      </div>
+      <div class="card">
+        <h3>3) Funcional con mandil</h3>
+        <p>Playera verde con logo y mandil crema con logotipo grande. Bolsillos amplios y tirantes cómodos para activaciones.</p>
+      </div>
+      <div class="card">
+        <h3>4) Ejecutivo</h3>
+        <p>Blazer verde oscuro con logo discreto, camisa crema y pantalón caqui. Pin del isotipo en la solapa.</p>
+      </div>
+      <div class="card" style="grid-column:1/-1">
+        <h3>7) Sport‑Active</h3>
+        <p>Sudadera con capucha (verde hoja o crema), logo al frente y eslogan en manga. Jogger crema y tenis ecológicos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Publicidad -->
+  <section id="publicidad" class="container">
+    <h2>Material publicitario</h2>
+    <div class="grid two">
+      <div class="card">
+        <h3>Cartel</h3>
+        <p>Minimalista en blanco crema con logo, hojas y burbujas. Mensaje: “Limpieza ecológica en cada burbuja”. Eslogan al pie para reforzar identidad.</p>
+      </div>
+      <div class="card">
+        <h3>Espectacular</h3>
+        <p>Versión horizontal con logo protagónico y elementos naturales. Acentos amarillos con moderación para vitalidad sin saturar.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Identidad visual -->
+  <section class="container">
+    <h2>Identidad visual</h2>
+    <div class="grid two">
+      <div class="card">
+        <h3>Colores</h3>
+        <div class="grid three" style="align-items:end">
+          <div><div class="swatch" style="background:var(--green)"></div><small>Verde hoja · #6BAA75</small></div>
+          <div><div class="swatch" style="background:var(--cream)"></div><small>Blanco crema · #F5F5DC</small></div>
+          <div><div class="swatch" style="background:var(--yellow)"></div><small>Amarillo limón · #FFD54F</small></div>
+        </div>
+        <p style="margin-top:10px">Verde para confianza; crema para pureza y suavidad; amarillo para acentos de energía.</p>
+      </div>
+      <div class="card">
+        <h3>Tipografía</h3>
+        <p>Encabezados con sans redondeada (Montserrat/Inter). Texto con sans limpia (Open Sans/Inter). Eslogan en peso regular para acompañar al logo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="container">
+    <h2>Contacto</h2>
+    <div class="grid two">
+      <div class="card">
+        <p><strong>EcoFiz S.A. de C.V.</strong></p>
+        <p>Avenida Principal, Amecameca · Estado de México</p>
+        <p>Tel. <a href="tel:+525533538981">55 3353 8981</a> · <a href="mailto:info@ecofiz.com">info@ecofiz.com</a></p>
+        <p><a href="#" aria-label="Instagram">Instagram</a> · <a href="#" aria-label="Facebook">Facebook</a></p>
+      </div>
+      <form class="card" onsubmit="event.preventDefault();alert('¡Gracias! Te contactaremos pronto.');">
+        <h3>Escríbenos</h3>
+        <label>Nombre<br><input required style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px"></label><br><br>
+        <label>Correo<br><input type="email" required style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px"></label><br><br>
+        <label>Mensaje<br><textarea rows="4" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px"></textarea></label><br>
+        <button class="btn">Enviar</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="foot">
+    <div class="container">
+      <div class="foot-brand">
+        <img src="sandbox:/mnt/data/A_logo_for_%22EcoFiz%22_is_displayed_on_a_transparent_.png" alt="Logo EcoFiz" />
+        <div>
+          <strong>EcoFiz</strong><br>
+          <small>Poder de limpieza en cada burbuja</small>
+        </div>
+      </div>
+      <small>© <span id="year"></span> EcoFiz S.A. de C.V. · Sostenibilidad, transparencia y resultados reales.</small>
+    </div>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </footer>
+  <script>
+    const btn = document.getElementById('menuBtn');
+    const mobile = document.getElementById('mobileNav');
+    btn?.addEventListener('click', ()=> mobile.classList.toggle('show'));
+  </script>
+</body>
+</html>
